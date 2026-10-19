@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LinkUp.Application\LinkUp.Application.csproj" />
     <ProjectReference Include="..\LinkUp.Infrastructure\LinkUp.Infrastructure.csproj" />
+    <ProjectReference Include="..\LinkUp.Shared\LinkUp.Shared.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
