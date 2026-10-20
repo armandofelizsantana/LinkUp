@@ -1,3 +1,4 @@
+using Xunit;
 using LinkUp.Shared.Options;
 using LinkUp.Shared.Services;
 
@@ -48,14 +49,20 @@ public sealed class SmtpEmailServiceTests
         Assert.Throws<ArgumentException>(() => new SmtpEmailService(options));
     }
 
-    [Theory]
-    [InlineData("")]
-    [InlineData("invalid address")]
-    public void Constructor_RejectsInvalidSender(string sender)
+    [Fact]
+    public void Constructor_RejectsMissingSender()
     {
         var options = ValidOptions();
-        options.FromAddress = sender;
-        Assert.ThrowsAny<Exception>(() => new SmtpEmailService(options));
+        options.FromAddress = "";
+        Assert.Throws<ArgumentException>(() => new SmtpEmailService(options));
+    }
+
+    [Fact]
+    public void Constructor_RejectsMalformedSender()
+    {
+        var options = ValidOptions();
+        options.FromAddress = "invalid address";
+        Assert.Throws<FormatException>(() => new SmtpEmailService(options));
     }
 
     [Fact]
