@@ -1,7 +1,17 @@
+using LinkUp.Application.Interfaces;
+using LinkUp.Shared.Options;
+using LinkUp.Shared.Services;
+using Microsoft.Extensions.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// El correo se configura externamente (User Secrets o variables de entorno).
+builder.Services.Configure<SmtpOptions>(builder.Configuration.GetSection(SmtpOptions.SectionName));
+builder.Services.AddTransient<IEmailService>(serviceProvider =>
+    new SmtpEmailService(serviceProvider.GetRequiredService<IOptions<SmtpOptions>>().Value));
 
 var app = builder.Build();
 
