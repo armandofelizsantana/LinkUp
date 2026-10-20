@@ -2,11 +2,15 @@ using LinkUp.Application.Interfaces;
 using LinkUp.Shared.Options;
 using LinkUp.Shared.Services;
 using Microsoft.Extensions.Options;
+using LinkUp.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Registrar Entity Framework Core y SQL Server.
+builder.Services.AddInfrastructure(builder.Configuration);
 
 // Las imágenes subidas se guardan en wwwroot con nombres generados por el servidor.
 builder.Services.AddSingleton<IImageStorageService>(new LocalImageStorageService(
@@ -37,6 +41,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
