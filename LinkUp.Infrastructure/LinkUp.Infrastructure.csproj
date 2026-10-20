@@ -20,4 +20,10 @@
   <FrameworkReference Include="Microsoft.AspNetCore.App" />
 </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\Configurations\" />
+    <Folder Include="Persistence\UnitOfWork\" />
+    <Folder Include="Persistence\Repositories\" />
+  </ItemGroup>
+
 </Project>

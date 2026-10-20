@@ -13,6 +13,15 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\Friendships\" />
+    <Folder Include="ViewModels\FriendRequests\" />
+    <Folder Include="ViewModels\Battleship\" />
+    <Folder Include="Views\Friendships\" />
+    <Folder Include="Views\FriendRequests\" />
+    <Folder Include="Views\Battleship\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>

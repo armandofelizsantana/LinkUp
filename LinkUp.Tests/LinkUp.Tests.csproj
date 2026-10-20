@@ -21,4 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\LinkUp.Shared\LinkUp.Shared.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\Friendships\" />
+    <Folder Include="Application\FriendRequests\" />
+    <Folder Include="Application\Battleship\" />
+    <Folder Include="Domain\Battleship\" />
+  </ItemGroup>
 </Project>

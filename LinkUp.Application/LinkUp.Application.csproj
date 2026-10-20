@@ -4,6 +4,17 @@
     <ProjectReference Include="..\LinkUp.Domain\LinkUp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\Friendships\" />
+    <Folder Include="DTOs\FriendRequests\" />
+    <Folder Include="DTOs\Battleship\" />
+    <Folder Include="Interfaces\Services\" />
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
