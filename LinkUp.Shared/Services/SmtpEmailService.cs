@@ -5,9 +5,7 @@ using LinkUp.Shared.Options;
 
 namespace LinkUp.Shared.Services;
 
-/// <summary>
-/// Envía correos mediante un servidor SMTP configurado externamente.
-/// </summary>
+
 public sealed class SmtpEmailService : IEmailService
 {
     private readonly SmtpOptions _options;

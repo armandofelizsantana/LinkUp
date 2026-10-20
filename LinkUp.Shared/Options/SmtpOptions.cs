@@ -1,8 +1,6 @@
 namespace LinkUp.Shared.Options;
 
-/// <summary>
-/// Opciones SMTP. Los valores sensibles deben proceder de configuración externa.
-/// </summary>
+
 public sealed class SmtpOptions
 {
     public const string SectionName = "Smtp";
